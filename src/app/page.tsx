@@ -105,6 +105,8 @@ const ui = {
     aboutLead: "Je suis développeur logiciel, avec une expérience dans les logiciels de comptabilité, les plateformes client, les outils pour développeurs et la robotique autonome.",
     aboutBody: "Mon travail se situe entre la construction de systèmes fiables et leur mise en pratique pour les personnes qui les utilisent. Je suis également co-fondateur de Preskater, un projet né d’un intérêt de longue date pour le skateboard.",
     cv: "Voir mon CV",
+    cvCpp: "CV — C++ / Systèmes",
+    cvFullstack: "CV — Full-Stack",
     skillsLabel: "02 — Compétences",
     skillsTitle: ["Des outils pour des", "logiciels réfléchis."],
     experienceLabel: "03 — Expérience",
@@ -132,6 +134,8 @@ const ui = {
     aboutLead: "I am a software developer with experience across accounting software, customer platforms, developer tooling and autonomous robotics.",
     aboutBody: "My work moves between building reliable systems and making them useful to the people who depend on them. I am currently co-founder of Preskater, a project born from a long-standing interest in skateboarding.",
     cv: "View my CV",
+    cvCpp: "CV — C++ / Systems",
+    cvFullstack: "CV — Full-Stack",
     skillsLabel: "02 — Skills",
     skillsTitle: ["Tools for thoughtful", "software."],
     experienceLabel: "03 — Experience",
@@ -202,7 +206,7 @@ export default function Home() {
 
       <section id="about" className="section page-width split-section">
         <Reveal><p className="eyebrow">{copy.aboutLabel}</p></Reveal>
-        <Reveal delay={0.1} className="section-content"><h2>{copy.aboutTitle[0]}<br /><em>{copy.aboutTitle[1]}</em></h2><p className="lead">{copy.aboutLead}</p><p>{copy.aboutBody}</p><a className="text-link" href="/CV_SAUTRON_Leo.pdf" target="_blank" rel="noreferrer">{copy.cv} <ArrowUpRight size={15} /></a></Reveal>
+        <Reveal delay={0.1} className="section-content"><h2>{copy.aboutTitle[0]}<br /><em>{copy.aboutTitle[1]}</em></h2><p className="lead">{copy.aboutLead}</p><p>{copy.aboutBody}</p><div style={{ display: "flex", flexWrap: "wrap", gap: "0 26px" }}><a className="text-link" href={`/cv/CV_Leo_Sautron_Cpp_${language === "fr" ? "FR" : "EN"}.pdf`} target="_blank" rel="noreferrer">{copy.cvCpp} <ArrowUpRight size={15} /></a><a className="text-link" href={`/cv/CV_Leo_Sautron_FullStack_${language === "fr" ? "FR" : "EN"}.pdf`} target="_blank" rel="noreferrer">{copy.cvFullstack} <ArrowUpRight size={15} /></a></div></Reveal>
       </section>
 
       <section id="skills" className="section section-grey"><div className="page-width split-section"><Reveal><p className="eyebrow">{copy.skillsLabel}</p></Reveal><Reveal delay={0.1} className="section-content"><h2>{copy.skillsTitle[0]}<br /><em>{copy.skillsTitle[1]}</em></h2><div className="skill-list">{skills.map((skill, index) => <div className="skill-row" key={skill.fr}><span>0{index + 1}</span><div><h3>{skill[language]}</h3><p>{skill.items}</p></div></div>)}</div></Reveal></div></section>
